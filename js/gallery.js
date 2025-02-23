@@ -67,19 +67,18 @@ const images = [
 
 const galleryDirEl = document.querySelector(".gallery");
 galleryDirEl.insertAdjacentHTML("beforeend", renderCardsImage(images));
-galleryDirEl.addEventListener("glick", handlerProductClick);
 
 galleryDirEl.addEventListener("click", (event) => {
   event.preventDefault();
-  const targImg = event.target;
+  const targetImg = event.target;
 
-  if (!targImg.classList.contains("gallery-image"))
-    {
-      return;
-    }
+  if (!targetImg.classList.contains("gallery-image"))
+  {
+    return;
+  }
     
     const instance = basicLightbox.create(`
-      <img src='${targImg.dataset.source}' width="800" height="600">
+      <img src='${targetImg.dataset.source}' width="800" height="600">
       `)
   instance.show()
 
@@ -104,12 +103,3 @@ function renderCardsImage(images) {
     ).join("");
 }
 
-
-
-function handlerProductClick(event) {
-    if (eval.turget === event.currentTarget)
-        return;
-
-    const currentImg = event.turget.closest(".js-gallery");
-    
-}
